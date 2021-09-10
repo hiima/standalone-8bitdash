@@ -1,0 +1,29 @@
+{
+  "name": "standalone-8bitdash",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "main": "main/index.js",
+  "scripts": {
+    "clean": "rimraf main",
+    "dev": "yarn build && electron main/",
+    "build": "tsc",
+    "pack-app": "yarn build && electron-builder --dir",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "electron": "^14.0.0",
+    "electron-builder": "^22.11.7",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "build": {
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  }
+}
